@@ -7,6 +7,6 @@ import ar.edu.unahur.obj2.observer.entidades.Alerta;
 public class RiesgoCritico implements Riesgo {
     @Override
     public Integer calcularRiesgo(List<Alerta> alertas) {
-        return Integer.valueOf((alertas.get(alertas.size() - 1).esCritica()) ? 10 : (alertas.get(alertas.size() - 1)).getNivel());
+        return Integer.valueOf(alertas.getLast().esCritica() ? 10 : alertas.getLast().getNivel());
     }
 }

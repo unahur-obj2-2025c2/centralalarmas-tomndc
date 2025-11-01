@@ -8,6 +8,6 @@ public class CriterioAcumulativo implements Riesgo{
     
     @Override
     public Integer calcularRiesgo(List<Alerta> alertas) {
-        return Integer.valueOf(null);
+        return (alertas.stream().filter(a ->a.esCritica())).mapToInt(a->a.getNivel()).sum();
     }
 }
