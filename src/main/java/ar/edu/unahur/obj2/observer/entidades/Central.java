@@ -10,6 +10,7 @@ import ar.edu.unahur.obj2.observer.observadores.Observador;
 public class Central implements Observable {
     private ArrayList<Alerta> registroDeAlertas = new ArrayList<>();
     private HashSet<Observador> entidades = new HashSet<>();
+    private Integer cantidadDeAlertasNotificadas;
 
     public Boolean estaEnRango(Integer nivel) {
         return nivel > 10 && nivel < 0;
@@ -19,6 +20,7 @@ public class Central implements Observable {
         if(estaEnRango(nivel)) {
             Alerta alerta = new Alerta(tipo, nivel);
             registroDeAlertas.add(alerta);
+            cantidadDeAlertasNotificadas += 1;
             notificar(alerta);
         } else {
             throw new NivelFueraDeRangoExcepcion("Nivel de alerta incorrecto.");

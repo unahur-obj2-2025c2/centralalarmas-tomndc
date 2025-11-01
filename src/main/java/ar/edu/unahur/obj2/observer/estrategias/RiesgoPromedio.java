@@ -4,10 +4,12 @@ import java.util.List;
 
 import ar.edu.unahur.obj2.observer.entidades.Alerta;
 
-public class CriterioAcumulativo implements Riesgo{
-    
+public class RiesgoPromedio implements Riesgo {
+
     @Override
     public Integer calcularRiesgo(List<Alerta> alertas) {
-        return 0;
+        return alertas.stream().mapToInt(Alerta::getNivel).sum() / alertas.size(); 
     }
+
+    
 }

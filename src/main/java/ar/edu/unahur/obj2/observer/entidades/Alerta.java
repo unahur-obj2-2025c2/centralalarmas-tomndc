@@ -12,4 +12,8 @@ public class Alerta {
     public Boolean esCritica() {
         return nivel >= 8;
     }
+
+    public Integer getNivel() {
+        return nivel;
+    }
 }

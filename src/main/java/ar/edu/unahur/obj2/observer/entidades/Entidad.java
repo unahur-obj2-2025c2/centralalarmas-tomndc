@@ -3,6 +3,7 @@ package ar.edu.unahur.obj2.observer.entidades;
 import java.util.ArrayList;
 
 import ar.edu.unahur.obj2.observer.estrategias.Riesgo;
+import ar.edu.unahur.obj2.observer.estrategias.RiesgoCritico;
 import ar.edu.unahur.obj2.observer.observadores.Observador;
 
 public class Entidad implements Observador {
@@ -17,7 +18,11 @@ public class Entidad implements Observador {
     @Override
     public void actualizar(Alerta alerta) {
         alertasRecibidas.add(alerta);
+        riesgo();
     }
 
+    public Integer riesgo() {
+        return riesgo.calcularRiesgo(this.alertasRecibidas);
+    }
 
 }
