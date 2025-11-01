@@ -42,4 +42,8 @@ public class Central implements Observable {
     public void notificar(Alerta alerta) {
         entidades.forEach(o -> o.actualizar(alerta));
     }
+
+    public Integer cantidadDeNotificacionesEnviadas() {
+        return registro.values().stream().mapToInt(Integer::intValue).sum();
+    }
 }
