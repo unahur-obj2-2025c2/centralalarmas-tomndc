@@ -8,6 +8,6 @@ public class CriterioAcumulativo implements Riesgo{
     
     @Override
     public Integer calcularRiesgo(List<Alerta> alertas) {
-        return 0;
+        return Integer.valueOf(null);
     }
 }

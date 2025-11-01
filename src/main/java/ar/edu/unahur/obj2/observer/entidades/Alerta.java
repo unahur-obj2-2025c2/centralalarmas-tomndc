@@ -10,8 +10,8 @@ public class Alerta {
     }
 
     public Boolean esCritica() {
-        return nivel >= 8;
-    }
+        return Boolean.valueOf(nivel >= 8);
+    } // O Boolean.ValueOf dentro del constructor, con una variable Boolean esCritica, pero es mejor así.
 
     public Integer getNivel() {
         return nivel;

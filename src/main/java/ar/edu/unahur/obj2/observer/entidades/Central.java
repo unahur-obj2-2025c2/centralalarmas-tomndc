@@ -13,7 +13,7 @@ public class Central implements Observable {
     private Integer cantidadDeAlertasNotificadas;
 
     public Boolean estaEnRango(Integer nivel) {
-        return nivel > 10 && nivel < 0;
+        return Boolean.valueOf(nivel > 10 && nivel < 0);
     }
 
     public void emitirAlerta(String tipo, Integer nivel) {

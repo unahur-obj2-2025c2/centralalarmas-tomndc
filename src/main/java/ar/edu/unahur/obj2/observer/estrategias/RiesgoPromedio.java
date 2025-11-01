@@ -8,7 +8,7 @@ public class RiesgoPromedio implements Riesgo {
 
     @Override
     public Integer calcularRiesgo(List<Alerta> alertas) {
-        return alertas.stream().mapToInt(Alerta::getNivel).sum() / alertas.size(); 
+        return Integer.valueOf(alertas.stream().mapToInt(Alerta::getNivel).sum() / alertas.size()); 
     }
 
     
